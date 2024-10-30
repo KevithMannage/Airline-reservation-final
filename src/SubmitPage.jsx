@@ -79,7 +79,7 @@ const SubmitPage = () => {
 
     const fetchDiscountedPrice = async (email, basePrice) => {
         try {
-            const response = await fetch(`http://localhost:3000/user/email/${email}`);
+            const response = await fetch(`http://localhost:3000/user/tier/${email}`);
             if (response.ok) {
                 const data = await response.json();
                 const discount = data.tier === 'Gold' ? 0.91 : data.tier === 'Frequent' ? 0.95 : 1;
